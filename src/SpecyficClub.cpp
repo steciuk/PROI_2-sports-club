@@ -1,6 +1,6 @@
 #include <vector>
 #include <string>
-#include "SpecyficClub.hpp"
+#include "../include/SpecyficClub.hpp"
 
 using namespace std;
 

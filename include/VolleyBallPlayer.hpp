@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "Player.hpp"
-#include "SpecyficPlayer.hpp"
+#include "../include/Player.hpp"
+#include "../include/SpecyficPlayer.hpp"
 
 class VolleyBallPlayer : public Player, public SpecyficPlayer
 {

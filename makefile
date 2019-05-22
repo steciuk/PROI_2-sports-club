@@ -25,3 +25,8 @@ clean:
 	@echo " $(RM) -r $(BUILDDIR) $(TARGET) $(BINDIR)"; $(RM) -r $(BUILDDIR) $(TARGET) $(BINDIR)
 
 .PHONY: clean
+
+.PHONY: test
+test:
+	@g++ -o test/testfile test/test.cpp -lboost_unit_test_framework
+	@./test/testfile --log_level=test_suite

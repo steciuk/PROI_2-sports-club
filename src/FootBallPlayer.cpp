@@ -1,4 +1,4 @@
-#include "FootBallPlayer.hpp"
+#include "../include/FootBallPlayer.hpp"
 
 FootBallPlayer::FootBallPlayer(const std::string name, const std::string surname, const int shirtNumber, const std::string position)
 {

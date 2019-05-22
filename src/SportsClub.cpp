@@ -1,4 +1,4 @@
-#include "SportsClub.hpp"
+#include "../include/SportsClub.hpp"
 
 SportsClub::SportsClub(const std::string name)
 {

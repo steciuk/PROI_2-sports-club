@@ -1,4 +1,4 @@
-#include "Tournament.hpp"
+#include "../include/Tournament.hpp"
 
 Tournament::Tournament(const std::string name,const std::vector<Player*> &players,unsigned int numPlayers):
     name(name),

@@ -2,13 +2,11 @@
 #define SPORTS_CLUB_HPP
 
 #include <iostream>
-#include "Player.hpp"
+#include "../include/Player.hpp"
 #include <vector>
-#include "Tournament.hpp"
+#include "../include/Tournament.hpp"
 
-/**
-klasa
-**/
+
 class SportsClub
 {
 private:

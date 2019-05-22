@@ -3,10 +3,10 @@
 
 #include <iostream>
 #include <vector>
-#include "SpecyficPlayer.hpp"
-#include "FootBallPlayer.hpp"
-#include "VolleyBallPlayer.hpp"
-#include "HandBallPlayer.hpp"
+#include "../include/SpecyficPlayer.hpp"
+#include "../include/FootBallPlayer.hpp"
+#include "../include/VolleyBallPlayer.hpp"
+#include "../include/HandBallPlayer.hpp"
 
 class SpecyficClub
 {

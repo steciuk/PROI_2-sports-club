@@ -1,9 +1,9 @@
 #ifndef INTERFACE_HPP
 #define INTERFACE_HPP
 
-#include "SportsClub.hpp"
-#include "FootBallPlayer.hpp"
-#include "SpecyficClub.hpp"
+#include "../include/SportsClub.hpp"
+#include "../include/FootBallPlayer.hpp"
+#include "../include/SpecyficClub.hpp"
 
 bool interface(SportsClub &club, SpecyficClub &specClub){
     char control;
@@ -14,7 +14,8 @@ bool interface(SportsClub &club, SpecyficClub &specClub){
               << std::endl << "a-add Specyfic Players"
               << std::endl << "w-add Tournament"
               << std::endl << "p-print"
-              << std::endl << "x-exit";
+              << std::endl << "o-print specyfic players"
+              << std::endl << "x-exit"<<std::endl;
 
     std::cin >> control;
     switch(control)
@@ -25,7 +26,8 @@ bool interface(SportsClub &club, SpecyficClub &specClub){
               << std::endl << "a-add Specyfic Players"
               << std::endl << "w-add Tournament"
               << std::endl << "p-print"
-              << std::endl << "x-exit";
+              << std::endl << "o-print specyfic players"
+              << std::endl << "x-exit"<<std::endl;
         break;
 
     case 'q':{
@@ -91,16 +93,16 @@ bool interface(SportsClub &club, SpecyficClub &specClub){
 
 
     case 'w':{
-        std::cout << "Podaj nazwe zawodow";
+        std::cout << "Podaj nazwe zawodow: ";
         std::cin >> nameTemp;
-        std::cout << "Podaj liczbe zawodnikow";
+        std::cout << "Podaj liczbe zawodnikow: ";
         std::cin >> nr;
         std::vector<Player *> vekt;
         Player *temp;
         int nrTemp;
         for (int i = 0; i < nr; i++)
         {
-            std::cout << "podaj nr zawodnika (nie koszulki)";
+            std::cout << "podaj nr zawodnika (nie koszulki): ";
             std::cin >> nrTemp;
             temp = club.getPlayer(nrTemp);
             vekt.push_back(temp);
@@ -113,11 +115,22 @@ bool interface(SportsClub &club, SpecyficClub &specClub){
         club.printAll();
 
         break;}
+    case 'o':{
+        std::cout << std::endl;
+        specClub.showSpecyficPlayers();
+
+        break;}
     case 'x':{
         return false;
 
         break;}
+
+    default:{
+        std::cout << "Wrong input!";
+
+        break;}
     }
+
     return true;
 }
 

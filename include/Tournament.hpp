@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <vector>
-#include "List.hpp"
-#include "Player.hpp"
+#include "../include/List.hpp"
+#include "../include/Player.hpp"
 
 class Tournament
 {

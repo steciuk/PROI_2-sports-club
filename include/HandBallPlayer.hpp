@@ -10,13 +10,15 @@ class HandBallPlayer : public Player, public SpecyficPlayer
 {
     private:
         std::string position;
+        bool isLeftHanded;
     public:
-        HandBallPlayer(const std::string name, const std::string surname, const int shirtNumber, const std::string position);
+        HandBallPlayer(const std::string name, const std::string surname, const int shirtNumber, const std::string position, const bool isLeftHanded);
         HandBallPlayer();
         ~HandBallPlayer();
 
-        std::string getInfo();
+//        std::string getInfo();
         virtual void showPosition();
+        std::string getIsLeftHanded();
 };
 
 #endif

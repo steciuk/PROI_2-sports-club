@@ -27,3 +27,17 @@ std::string Player::getInfo()
     return temp;
 }
 
+std::string Player::getName()
+{
+    return this->name;
+}
+
+std::string Player::getSurname()
+{
+    return this->surname;
+}
+
+int Player::getShirtNo()
+{
+    return this->shirtNumber;
+}

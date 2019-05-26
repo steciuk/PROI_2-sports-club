@@ -10,13 +10,15 @@ class VolleyBallPlayer : public Player, public SpecyficPlayer
 {
     private:
         std::string position;
+        int height;
     public:
-        VolleyBallPlayer(const std::string name, const std::string surname, const int shirtNumber, const std::string position);
+        VolleyBallPlayer(const std::string name, const std::string surname, const int shirtNumber, const std::string position, const int height);
         VolleyBallPlayer();
         ~VolleyBallPlayer();
 
-        std::string getInfo();
+//        std::string getInfo();
         virtual void showPosition();
+        std::string getHeight();
 };
 
 #endif

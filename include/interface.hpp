@@ -3,7 +3,10 @@
 
 #include "../include/SportsClub.hpp"
 #include "../include/FootBallPlayer.hpp"
+#include "../include/HandBallPlayer.hpp"
+#include "../include/VolleyBallPlayer.hpp"
 #include "../include/SpecyficClub.hpp"
+#include <limits>
 
 bool interface(SportsClub &club, SpecyficClub &specClub){
     char control;
@@ -31,12 +34,32 @@ bool interface(SportsClub &club, SpecyficClub &specClub){
         break;
 
     case 'q':{
+        bool input = true;
         std::cout << "Name: ";
         std::cin >> nameTemp;
         std::cout << "Surname: ";
         std::cin >> surnameTemp;
-        std::cout << "Shirt number: ";
-        std::cin >> nr;
+        while(input)
+        {
+            try
+            {
+                std::cout << "Shirt number: ";
+                std::cin >> nr;
+                if(!std::cin)
+                {
+                    throw -1;
+                }
+                input = false;
+            }
+            catch(...)
+            {
+                std::cout << "Value must be numeric!";
+                input = true;
+                std::cin.clear(); // Clear error flags
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear out the input buffer
+
+            }
+        }
         club.addPlayer(nameTemp, surnameTemp, nr);
 
         break;}
@@ -67,17 +90,26 @@ bool interface(SportsClub &club, SpecyficClub &specClub){
 
 
                 case 1:{
-                    FootBallPlayer FPtemp(nameTemp,surnameTemp,nr,positionTemp);
+                    int age = 0;
+                    std::cout << std::endl << "Age: ";
+                    std::cin >> age;
+                    FootBallPlayer FPtemp(nameTemp,surnameTemp,nr,positionTemp, age);
                     specClub.addFootBallPlayer(FPtemp);
                 break;}
 
                 case 2:{
-                    HandBallPlayer FPtemp(nameTemp,surnameTemp,nr,positionTemp);
+                    bool isLeftHanded;
+                    std::cout << std::endl << "Is Left Handed? (0,1): ";
+                    std::cin >> isLeftHanded;
+                    HandBallPlayer FPtemp(nameTemp,surnameTemp,nr,positionTemp, isLeftHanded);
                     specClub.addHandBallPlayer(FPtemp);
                 break;}
 
                 case 3:{
-                    VolleyBallPlayer FPtemp(nameTemp,surnameTemp,nr,positionTemp);
+                    int height = 0;
+                    std::cout << std::endl << "Height: ";
+                    std::cin >> height;
+                    VolleyBallPlayer FPtemp(nameTemp,surnameTemp,nr,positionTemp, height);
                     specClub.addVolleyBallPlayer(FPtemp);
                 break;}
 

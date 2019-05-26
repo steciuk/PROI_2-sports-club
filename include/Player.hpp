@@ -20,6 +20,9 @@ public:
 
   template<typename T> void setSalary(T);
   std::string getInfo();
+  std::string getName();
+  std::string getSurname();
+  int getShirtNo();
 };
 
 #endif

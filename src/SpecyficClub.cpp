@@ -1,6 +1,9 @@
 #include <vector>
 #include <string>
 #include "../include/SpecyficClub.hpp"
+#include "../include/FootBallPlayer.hpp"
+#include "../include/HandBallPlayer.hpp"
+#include "../include/VolleyBallPlayer.hpp"
 
 using namespace std;
 
@@ -26,7 +29,7 @@ void SpecyficClub::addVolleyBallPlayer(VolleyBallPlayer playerToAdd)
     for( vector<FootBallPlayer>::iterator iFootBallPlayer = footBallPlayers.begin(); iFootBallPlayer != footBallPlayers.end(); iFootBallPlayer++ )
     {
         playerInfo = iFootBallPlayer->getInfo();
-        cout << endl << playerInfo;
+        cout << endl << playerInfo << " age: " << iFootBallPlayer->getAge();
         showSpecyficPlayer((SpecyficPlayer*)&(*iFootBallPlayer));
     }
 
@@ -34,7 +37,7 @@ void SpecyficClub::addVolleyBallPlayer(VolleyBallPlayer playerToAdd)
     for( vector<HandBallPlayer>::iterator iHandBallPlayer = handBallPlayers.begin(); iHandBallPlayer != handBallPlayers.end(); iHandBallPlayer++ )
     {
         playerInfo = iHandBallPlayer->getInfo();
-        cout  << endl << playerInfo;
+        cout  << endl << playerInfo << " is left handed: " << iHandBallPlayer->getIsLeftHanded();
         showSpecyficPlayer((SpecyficPlayer*)&(*iHandBallPlayer));
     }
 
@@ -42,7 +45,7 @@ void SpecyficClub::addVolleyBallPlayer(VolleyBallPlayer playerToAdd)
     for( vector<VolleyBallPlayer>::iterator iVolleyBallPlayer = volleyBallPlayers.begin(); iVolleyBallPlayer != volleyBallPlayers.end(); iVolleyBallPlayer++ )
     {
         playerInfo = iVolleyBallPlayer->getInfo();
-        cout << endl << playerInfo;
+        cout << endl << playerInfo << " height: " << iVolleyBallPlayer->getHeight();
         showSpecyficPlayer((SpecyficPlayer*)&(*iVolleyBallPlayer));
     }
  }
